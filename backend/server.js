@@ -2,9 +2,13 @@ const path = require("path");
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const bodyParser = require("body-parser");
+const cors = require("cors"); // ✅ Added CORS
 
 const app = express();
 const PORT = 3000;
+
+// ✅ Enable CORS for all routes
+app.use(cors());
 
 // Middleware
 app.use(bodyParser.json());
